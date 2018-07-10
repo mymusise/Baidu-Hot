@@ -1,5 +1,12 @@
 language: python
 sudo: false
+notifications:
+  email:
+    recipients:
+      - 604072107@qq.com
+      - mymusise1@gmail.com
+    on_success: never
+    on_failure: always
 python:
  - "3.5"
 install:

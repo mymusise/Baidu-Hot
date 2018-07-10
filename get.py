@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import json
 import os
-import re
 
 
 class Parser:
@@ -18,7 +17,6 @@ class Parser:
         trs = table.find_all('tr')
         data = []
         for tr in trs[1:]:
-            print(tr)
             index = tr.find(class_="first").text
             index = int(index)
             keyword = tr.find(class_="keyword").find('a').text

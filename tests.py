@@ -15,7 +15,7 @@ class TestClawer(TestCase):
 
         parser = Parser(doc)
         data = parser.parse()
-        self.assertEqual(len(data), 50)
+        self.assertEqual(len(data), 51)
 
 
 if __name__ == "__main__":
