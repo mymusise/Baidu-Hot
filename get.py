@@ -66,8 +66,7 @@ class Runner:
     def __init__(self):
         now = datetime.now()
         self._year = str(now.year)
-        self._filename = "{month}{day}.json".format(
-            month=now.month, day=now.day)
+        self._filename = now.strftime("%m-%d.json")
 
     def _check_directory(self, name):
         classes_dir = os.path.join(self.base_dir, name)
@@ -93,11 +92,8 @@ class Runner:
         json.dump(data, open(path, 'w'), ensure_ascii=False)
 
     def run_all(self):
-        self._save('today')
-        self._save('sevent_day')
-        self._save('life')
-        self._save('entertainment')
-        self._save('sports')
+        for name in self.CLASSES.keys():
+            self._save(name)
 
 
 if __name__ == '__main__':
