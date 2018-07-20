@@ -2,7 +2,6 @@
 #
 #Get data automatically
 
-git checkout .
 git pull
 python3 get.py
 git add --all
